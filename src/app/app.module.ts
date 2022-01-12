@@ -13,6 +13,22 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {CardComponent} from './posting/posting/card/card.component';
 import {HttpClientModule} from '@angular/common/http';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import {environment} from '../environments/environment.prod';
+// @ts-ignore
+import {AngularFireModule} from '@angular/fire';
+import { ChangeAvatarComponent } from './change/change-avatar/change-avatar.component';
+import { LoginComponent } from './form-login/login/login.component';
+import { LogoutComponent } from './form-login/logout/logout.component';
+import { RegisterComponent } from './form-login/register/register.component';
+import { UserAccountComponent } from './form-login/user-account/user-account.component';
+import { UploadAvatarComponent } from './upload/upload-avatar/upload-avatar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -21,16 +37,32 @@ import {HttpClientModule} from '@angular/common/http';
     NewComponent,
     NotificationComponent,
     PostingComponent,
-    CardComponent
+    CardComponent,
+    ChangeAvatarComponent,
+    LoginComponent,
+    LogoutComponent,
+    RegisterComponent,
+    UserAccountComponent,
+    UploadAvatarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
     MatSelectModule,
     MatInputModule,
-    HttpClientModule
+    MatButtonModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
