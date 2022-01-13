@@ -28,6 +28,7 @@ import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
+import {PostingListComponent} from './posting/posting/posting-list/posting-list.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {MatButtonModule} from '@angular/material/button';
     LogoutComponent,
     RegisterComponent,
     UserAccountComponent,
-    UploadAvatarComponent
+    UploadAvatarComponent,
+    PostingListComponent
   ],
   imports: [
     BrowserModule,

@@ -3,12 +3,13 @@ const TOKEN_KEY = 'Token_Key';
 const NAME_KEY = 'Name_Key';
 const ROLE_KEY = 'Role_Key';
 const AVATAR_KEY = 'Avatar_Key';
+const ID_KEY = 'Id_Key';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
-  private roles: Array<string> = [];
+  private _roles: Array<string> = [];
   constructor() { }
   public setToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -37,12 +38,20 @@ export class TokenService {
     window.sessionStorage.setItem(ROLE_KEY, JSON.stringify(roles));
   }
   public getRoles(): string[] {
-    this.roles = [];
+    this._roles = [];
     if (sessionStorage.getItem(TOKEN_KEY)) {
       JSON.parse(sessionStorage.getItem(ROLE_KEY)).focus(role => {
-        this.roles.push(role.authority)
-      })
+        this._roles.push(role.authority);
+      });
     }
-    return this.roles;
+    return this._roles;
+  }
+  public getIdKey(): string{
+   return window.sessionStorage.getItem(ID_KEY);
+  }
+
+  public setIdKey(id: string){
+    window.sessionStorage.removeItem(ID_KEY);
+    window.sessionStorage.setItem(ID_KEY, id);
   }
 }

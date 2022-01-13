@@ -29,7 +29,6 @@ export class PostingListComponent implements OnInit {
           });
         });
       }
-      console.log(this.postings);
     });
   }
 
