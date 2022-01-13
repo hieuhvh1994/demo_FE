@@ -5,6 +5,7 @@ import {RegisterComponent} from './form-login/register/register.component';
 import {LogoutComponent} from './form-login/logout/logout.component';
 import {LoginComponent} from './form-login/login/login.component';
 import {UserAccountComponent} from './form-login/user-account/user-account.component';
+import {NewComponent} from './new/new.component';
 
 const routes: Routes = [
   {path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [
     path: 'user-account',
     component: UserAccountComponent,
     data: {title: 'User-Account'}
+  },
+  {
+    path: 'new',
+    component: NewComponent
   }
 ];
 

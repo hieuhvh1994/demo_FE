@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import {NavBarComponent, NavBarModule} from './shared/navbar/nav-bar.component';
 import { NewComponent } from './new/new.component';
 import { NotificationComponent } from './notification/notification.component';
 import { PostingComponent } from './posting/posting/posting.component';
@@ -28,12 +28,19 @@ import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
+import {ThemePickerComponent, ThemePickerModule} from './shared/theme-picker';
+import { NavBar2Component } from './nav-bar2/nav-bar2.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {FooterModule} from './shared/footer';
+import {NgxAudioPlayerModule} from 'ngx-audio-player';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     NewComponent,
     NotificationComponent,
     PostingComponent,
@@ -43,26 +50,32 @@ import {MatButtonModule} from '@angular/material/button';
     LogoutComponent,
     RegisterComponent,
     UserAccountComponent,
-    UploadAvatarComponent
+    UploadAvatarComponent,
+    NavBar2Component
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
     MatCardModule,
+    MatFormFieldModule,
+    AppRoutingModule,
     FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    NavBarModule,
+    FooterModule,
+    NgxAudioPlayerModule,
     ReactiveFormsModule,
     RouterModule,
     MatSelectModule,
     MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    HttpClientModule,
-    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
